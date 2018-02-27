@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Kathryn L. Zanoni | Chicago Interior Design</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+    
+
+        <% flash.each do |name, msg| %>
+            <%= content_tag(:div, msg, class: "alert alert-info") %>
+        <% end %>
+        <!--breadcrumbs here?-->
+        
+          <%= yield %>
+        
+       
+       
+    <section class="footer text-muted text-center">
+      <br><br>
+      <p>
+        <small>
+          &copy 2018 <%= link_to 'Kathryn Zanoni Interior Design', new_user_session_path, class: "text-muted" %>
+        </small>
+      </p>
+    </section>
+  </body>
+</html>
+

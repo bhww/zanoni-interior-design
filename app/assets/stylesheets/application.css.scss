@@ -1,0 +1,150 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.6em;
+    color: #445060;
+}
+
+h2, h3, h4 {
+    margin: 2rem 0rem;
+}
+
+
+
+.hero-image {
+    background-image: url("http://via.placeholder.com/1280x898");
+    width: 100%;
+    height: 99vh;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    z-index: 1;
+    // opacity: .4;
+}
+
+.hero-text {
+   
+    font-size: 4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: center;
+    color: #fff;
+    padding-top: 35vh;
+    z-index: 2;
+}
+
+mark, .mark {
+    padding: 0em .2em;
+    background-color: #555;
+    color: #fff;
+}
+.about-section {
+    background-color: #444;
+    text-align: center;
+    padding: 4rem 6rem;
+    
+    h1, h2, h3, h4, a {
+      color: #fff;
+    }
+    p {
+      color: #e3e3e3;
+    }
+}
+
+.services-section {
+    background-color: #fff;
+    text-align: center;
+    padding: 4rem 6rem;
+    
+    h1, h2, h3, h4 {
+      color: #555;
+    }
+    p {
+      color: #777;
+    }
+}
+
+.portfolio-section {
+    background-color: #444;
+    text-align: center;
+    padding: 4rem 6rem;
+    
+    h1, h2, h3, h4, a {
+      color: #fff;
+    }
+    p {
+      color: #e3e3e3;
+    }
+}
+.contact-section {
+    background-color: #fff;
+    text-align: center;
+    padding: 4rem 6rem;
+    
+    h1, h2, h3, h4, a {
+      color: #555;
+    }
+    p {
+      color: #777;
+    }
+}
+
+.portfolio-show {
+    background-color: #444;
+    text-align: center;
+    // padding: 4rem 6rem;
+    min-height: 100vh;
+    padding-bottom: 4rem;
+    
+    h1, h2, h3, h4, a {
+      color: #fff;
+    }
+    p {
+      color: #e3e3e3;
+    }
+    hr {
+      border-top: 2px solid #ccc;
+      width: 20%;
+    }
+}
+
+
+
+
+
+
+
+// Small devices (landscape phones, 576px and up)
+
+// Small &  Medium devices (tablets, 768px and up)
+@media (max-width: 768px) { 
+    .about-section {
+        padding: 4rem 0rem;
+    }
+    .services-section {
+        padding: 4rem 0rem;
+    }
+    .portfolio-section {
+        padding: 4rem 0rem;
+    }
+    .contact-section {
+        padding: 4rem 0rem;
+    }
+}
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) { 
+    }
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    }
+
+
+

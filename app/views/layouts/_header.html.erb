@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #777;">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <%= link_to "Kathryn L. Zanoni Interior Design", root_path, class: "navbar-brand" %>
+  
+  
+  
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <ul class="navbar-nav ml-auto">
+      <li class="<%= 'active' if current_page?(root_path) %>">
+        <%= link_to('Home', root_path, class:"nav-item nav-link") %>
+      </li>
+      <li><%= link_to('About', root_path(:anchor => 'about'), class:"nav-item nav-link") %></li>
+      <li> <%= link_to('Services', root_path(:anchor => 'services'), class:"nav-item nav-link") %></li>
+      <li><%= link_to('Portfolio', root_path(:anchor => 'portfolio'), class:"nav-item nav-link") %></li>
+      <li><%= link_to('Contact', root_path(:anchor => 'contact'), class:"nav-item nav-link") %></li>
+      <% if user_signed_in? %>
+      <li><%= link_to('Sign out as admin',  destroy_user_session_path, :method => :delete, class:"nav-item nav-link btn btn-sm btn-danger") %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

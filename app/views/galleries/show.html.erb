@@ -1,0 +1,67 @@
+<section class="portfolio-show" %>
+  <div class="container-fluid">
+    <br>
+    <h1>
+     Portfolio | <%= @gallery.name %>
+    </h1>
+    <p>
+      <%= @gallery.description if @gallery.description.present? %>
+    </p>
+    <%= link_to 'Edit gallery title and/or description text (admin only)', edit_gallery_path(@gallery), class: "btn btn-sm btn-success" if user_signed_in? %>
+    <%#= link_to 'Back', galleries_path %>
+   <hr>
+   <!-- Images --> 
+   <div class = "row">
+     <div class="col-xs-12 col-lg-4" style="height:450px; padding: 65px 15px; ">
+       <%= link_to "#" do %>
+          <img src="http://via.placeholder.com/1000x450" style=" height: 100%; max-width:100%">
+          <p>
+            Caption
+            <% if user_signed_in? %>
+              <br> 
+              <%= link_to "Edit (admin only)", "#", class: "btn btn-sm btn-success" %>
+             <% end %>
+           </p>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-lg-4" style="height:450px; padding: 65px 15px; ">
+       <%= link_to "#" do %>
+          <img src="http://via.placeholder.com/1000x450" style=" height: 100%; max-width:100%">
+          <p>
+            Caption
+            <% if user_signed_in? %>
+              <br> 
+              <%= link_to "Edit (admin only)", "#", class: "btn btn-sm btn-success" %>
+             <% end %>
+           </p>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-lg-4" style="height:450px; padding: 65px 15px; ">
+       <%= link_to "#" do %>
+          <img src="http://via.placeholder.com/1000x450" style=" height: 100%; max-width:100%">
+          <p>
+            Caption
+            <% if user_signed_in? %>
+              <br> 
+              <%= link_to "Edit (admin only)", "#", class: "btn btn-sm btn-success" %>
+             <% end %>
+           </p>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-lg-4" style="height:450px; padding: 65px 15px; ">
+       <%= link_to "#" do %>
+          <img src="http://via.placeholder.com/1000x450" style=" height: 100%; max-width:100%">
+          <p>
+            Caption
+            <% if user_signed_in? %>
+              <br> 
+              <%= link_to "Edit (admin only)", "#", class: "btn btn-sm btn-success" %>
+             <% end %>
+           </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= render 'welcome/contact_us_section' %>

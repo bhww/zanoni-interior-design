@@ -1,0 +1,137 @@
+
+<div class="hero-image">
+  <h1 class="hero-text">
+      <mark>When the details matter...</mark><br>
+      <small>
+        <a href="#about" style="color: red">
+          <i class="fas fa-lg fa-chevron-circle-down"></i>
+        </a>
+      </small>
+  </h1>
+</div>
+
+<section class="about-section" id="about">
+  <div class="container">
+    <h2>Kathryn L. Zanoni Interior Design</h2>
+    <hr class="light"><br>
+    <p>
+      Kate Zanoni founded Kathryn L. Zanoni Interior Design in 1999 with the understanding that details matter. With a natural ability Kate develops a design process around the needs and individual style of the client, while maintaining the principles of high end design.
+    </p>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-5">
+        <br>
+        <img src="http://via.placeholder.com/270x370" class="img-fluid" alt="Kathryn L. Zanoni - Chiacgo Interior Designer">
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-7">
+        <h3>A Consummate Designer</h3>
+        <p>
+            Kate has a background in the arts. She is a graduate of the Harrington Institute of Interior Design in Chicago and continues to gain valuable experience creating and developing living spaces for clients with the most sophisticated and far-ranging of tastes.
+         </p>
+        <h3>Interior Design as Process</h3>
+        <p>
+            The essence of interior design is the merging of form, function and finish with the aesthetic sensibilities of the client. From initial designs, through purchasing and construction management, to the installation of the finishing touches, Kathryn L Zanoni Interior Design will orchestrate the entire process to produce superior results.
+        </p>
+      </div> 
+    </div>
+    <br>
+    <h3>A Sublime Result</h3>
+    <p>
+      The final product and the client’s satisfaction are the true measures of success. Kathryn L. Zanoni Interior Design is committed to crafting truly inspiring interior spaces and making the process enjoyable. For interior design that marries form, function and finish with the sublime details of one’s own style, <a href="#contact" style="color:#fff;" >contact us</a> today.
+    </p>
+    <p>
+      <br>
+      <a href="#services" class="btn btn-danger btn-lg page-scroll">
+        <i class="fa fa-angle-double-down"></i>&nbsp;Our Services
+      </a> 
+    </p>
+  </div>
+</section>
+
+<section class="services-section" id="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <hr class="primary">
+ 
+                         
+        <h3>Design</h3>
+        <p class="text-muted">
+          We understand that functionality is as valuable as form and can help you realize the maximum potential for your space.We will take your input, combine it with our expertise and design a fantastic space that suits your tastes and your needs. We’ll create a unique blend of your style and contemporary design philosophy. Don’t forget that half the fun is in the creation.
+        </p>
+      
+                       
+        <h3>Consultation</h3>
+        <p class="text-muted">
+          If you are not quite ready to embark on a full scale remodel and just want to explore your interior design options, we are delighted to help. Consultations can involve anything from simple advice on furnishings and fixtures to detailed plans on a fully remodeled or new space. We also can be available if you need assistance in managing your construction project. Our goal is to facilitate the interior design process for you by laying a good foundation and not allowing you to miss any of the important details.
+        </p>
+      
+                           
+        <h3>Purchasing</h3>
+        <p class="text-muted">
+         Shopping is an enjoyable pursuit when done at one’s leisure and on one’s own schedule. However, coordinating the purchase, delivery and installation of a large amount of furniture and fixtures can be a difficult process. It requires excellent organization and superb attention to detail. Kathryn L. Zanoni Interior Design will manage this challenging process for you.
+        </p>
+    
+                             
+        <h3>Finishing Touches</h3>
+        <p class="text-muted">
+          Sometimes, pulling all the loose ends together and completing a project is the most difficult task. We will assemble the final “punch list” to ensure that every last detail is accomplished, and that the project is finished to your complete satisfaction. The final result is a beautiful space that will be both comfortable for your everyday living, and one where you will feel proud to entertain your friends and families.
+        </p>
+     
+    <p>
+      <br>
+        <a href="#portfolio" class="hidden-xs btn btn-danger btn-lg page-scroll">
+          <i class="fa fa-angle-double-down"></i>&nbsp;Our Portfolio
+        </a>
+    </p>             
+  </div>
+</section>
+
+<section class="portfolio-section" id="portfolio">
+  <h2>Our Portfolio</h2>
+  <%= link_to "+ Add new gallery (Admin only)", new_gallery_path, class: "btn btn-success" if user_signed_in? %>
+  <div class="container">
+    <div class="row">
+      
+      
+      <!-- Need dynamic creation of galleries here -->
+      <% @galleries.each do |gallery| %>
+        <div class="col-xs-12 col-lg-6" style="height:450px; padding: 65px 15px; ">
+          <%= link_to gallery_path(gallery) do %>
+          <img src="http://via.placeholder.com/1000x450" style=" height: 100%; max-width:100%">
+          <p>
+            <%= gallery.name %>
+            <% if user_signed_in? %>
+              <br> 
+              <%= link_to "Edit (admin only)", edit_gallery_path(gallery), class: "btn btn-sm btn-success" %>
+            <% end %>
+          </p>
+          <% end %>
+        </div>
+      <% end %>
+      <!-- Need dynamic creation of galleries here -->
+      
+      
+      
+      
+    </div>
+  </div>
+  <br>
+   <p>
+      <br>
+        <a href="#contact" class="hidden-xs btn btn-danger btn-lg page-scroll">
+          <i class="fa fa-angle-double-down"></i>&nbsp;Contact Us
+        </a>
+    </p>
+</section>
+
+
+<%= render 'welcome/contact_us_section' %>
+  
+
+
+
+
+  
+
+
+
+
