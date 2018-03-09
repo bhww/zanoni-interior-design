@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'bootstrap', '~> 4.0.0'
 gem 'font-awesome-sass', '~> 5.0.6'
+gem "paperclip", "~> 5.2.1"
+gem 'aws-sdk', '~> 2.3'
 
 
 

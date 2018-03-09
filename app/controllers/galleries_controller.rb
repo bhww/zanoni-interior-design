@@ -6,11 +6,13 @@ class GalleriesController < ApplicationController
   # GET /galleries.json
   def index
     @galleries = Gallery.all
+    
   end
 
   # GET /galleries/1
   # GET /galleries/1.json
   def show
+    @pictures = @gallery.pictures
   end
 
   # GET /galleries/new
