@@ -17,7 +17,7 @@ h2, h3, h4 {
 
 
 .hero-image {
-    background-image: url("http://via.placeholder.com/1280x898");
+    background-image: url("kitchen-island.jpg");
     width: 100%;
     height: 99vh;
     background-position: center;
@@ -47,7 +47,7 @@ mark, .mark {
     color: #fff;
 }
 .about-section {
-    background-color: #444;
+    background-color: #111;
     text-align: center;
     padding: 4rem 6rem;
     
@@ -73,7 +73,7 @@ mark, .mark {
 }
 
 .portfolio-section {
-    background-color: #444;
+    background-color: #111;
     text-align: center;
     padding: 4rem 6rem;
     
@@ -98,7 +98,7 @@ mark, .mark {
 }
 
 .portfolio-show {
-    background-color: #444;
+    background-color: #111;
     text-align: center;
     // padding: 4rem 6rem;
     min-height: 100vh;
@@ -116,6 +116,17 @@ mark, .mark {
     }
 }
 
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.navbar-brand-image {
+  max-height: 50px;
+  height: 100%;
+  width: auto;
+  margin-right: .75rem;
+}
 
 
 
@@ -137,6 +148,9 @@ mark, .mark {
     }
     .contact-section {
         padding: 4rem 0rem;
+    }
+    .navbar-brand-image {
+      display: none;
     }
 }
 // Large devices (desktops, 992px and up)
