@@ -12,11 +12,6 @@
    <hr>
    <!-- Images --> 
    <div class = "row">
-     
-     
-     
-     <!-- make dynamic -->
-     
      <% @pictures.each do |picture| %>
       <div class="col-xs-12 col-lg-4" style="padding: 1rem;">
         <%= image_tag picture.image.url(:large), class:"img-fluid" %>
@@ -29,24 +24,6 @@
            </p>
       </div>
      <% end %>
-     
-     
-     <!--<div class="col-xs-12 col-lg-4" style="height:450px; padding: 65px 15px; ">-->
-     <!--  <%#= link_to "#" do %>-->
-     <!--     <img src="http://via.placeholder.com/1000x450" style=" height: 100%; max-width:100%">-->
-     <!--     <p>-->
-     <!--       Caption-->
-     <!--       <%# if user_signed_in? %>-->
-     <!--         <br> -->
-     <!--         <%#= link_to "Edit (admin only)", "#", class: "btn btn-sm btn-success" %>-->
-     <!--        <%# end %>-->
-     <!--      </p>-->
-     <!--   <%# end %>-->
-     <!-- </div>-->
-      
-      
-      
-      
     </div>
   </div>
 </section>
