@@ -17,7 +17,10 @@ h2, h3, h4 {
 
 
 .hero-image {
-    background-image: url("kitchen-island.jpg");
+    // background-image: url("kitchen-island.jpg");
+    // The above doesnt work with bootstrap on heroku oddly enough 
+   
+    background-image: url(image_path("kitchen-island.jpg"));
     width: 100%;
     height: 99vh;
     background-position: center;
