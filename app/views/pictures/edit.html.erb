@@ -1,6 +1,16 @@
-<h1>Editing Picture</h1>
+<div class="container">
+    <div class="row-fluid">
+        <div class="col-xs-12">
+            <h1>Editing Picture</h1>
 
 <%= render 'form', picture: @picture %>
 
-<%= link_to 'Show', @picture %> |
-<%= link_to 'Back', pictures_path %>
+<%= link_to 'View', @picture %> |
+<%= link_to 'Delete this picture', @picture, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Go back to gallery', gallery_path(@picture.gallery_id) if @picture.gallery_id.present? %>
+            
+        </div>
+    </div>
+
+
+</div>

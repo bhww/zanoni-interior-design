@@ -101,14 +101,15 @@
           <% if gallery.image.present? %>
             <%= image_tag gallery.image.url(:large),  style:" height: 100%; max-width:100%"%>
           <% else %>
-             <img src="https://via.placeholder.com/1000x450" style=" height: 100%; max-width:100%">
+             <img src="https://via.placeholder.com/800x450" style=" height: 100%; max-width:100%">
           <% end %>
            
           <p>
             <%= gallery.name %>
             <% if user_signed_in? %>
               <br> 
-              <%= link_to "Edit (admin only)", edit_gallery_path(gallery), class: "btn btn-sm btn-success" %>
+              <%= link_to "Edit gallery info (admin only)", edit_gallery_path(gallery), class: "btn btn-sm btn-success" %>
+              <%= link_to "Open gallery", gallery_path(gallery), class: "btn btn-sm btn-success" %>
             <% end %>
           </p>
           <% end %>

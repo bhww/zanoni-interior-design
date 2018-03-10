@@ -23,11 +23,23 @@
   
   <hr>
 
+
+  <!--if params gallery present then dont show this-->
+  <% if params[:gallery_id] %>
+    <%= form.hidden_field :gallery_id, value: params[:gallery_id] %>
+  
+  <% else %>  
   <div class="form-group ">
     <%= form.label :gallery_id, "Gallery (*required)"  %>
     <%= form.collection_select :gallery_id, Gallery.order(:name),:id,:name, {include_blank: true, required: true, class: "form-control"}  %>
     <%#= form.text_field :gallery_id, id: :picture_gallery_id, class: "form-control col-xs-12 col-md-4" %>
   </div>
+  <% end %>
+  
+  
+  
+  
+  
 
   <div class="form-group ">
     <%= form.label :name, "Caption (optional)" %>

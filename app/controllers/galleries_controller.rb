@@ -12,7 +12,7 @@ class GalleriesController < ApplicationController
   # GET /galleries/1
   # GET /galleries/1.json
   def show
-    @pictures = @gallery.pictures
+    @pictures = @gallery.pictures.order("sort_order asc")
   end
 
   # GET /galleries/new
@@ -31,7 +31,7 @@ class GalleriesController < ApplicationController
 
     respond_to do |format|
       if @gallery.save
-        format.html { redirect_to root_path, notice: 'Gallery was successfully created.' }
+        format.html { redirect_to root_path(:anchor => 'portfolio'), notice: 'Gallery was successfully created.' }
         format.json { render :show, status: :created, location: @gallery }
       else
         format.html { render :new }
@@ -59,7 +59,7 @@ class GalleriesController < ApplicationController
   def destroy
     @gallery.destroy
     respond_to do |format|
-      format.html { redirect_to galleries_url, notice: 'Gallery was successfully destroyed.' }
+      format.html { redirect_to root_path(:anchor => 'portfolio'), notice: 'Gallery was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

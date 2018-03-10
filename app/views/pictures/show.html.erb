@@ -1,19 +1,40 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Gallery:</strong>
-  <%= @picture.gallery %>
-</p>
+<section class="portfolio-section">
+  <div class="container">
+  <div class="row-fluid">
+    <div class="col-xs-12">
 
-<p>
-  <strong>Name:</strong>
-  <%= @picture.name %>
-</p>
+      <p id="notice"><%= notice %></p>
+        
+        <p>
+          <%= image_tag @picture.image.url(:large), class:"img-fluid" %>
+        </p>
+         <p>
+        <strong>Gallery:</strong>
+        <%= link_to @picture.gallery.try(:name), gallery_path(@picture.gallery_id) %>
+      </p>
+        <% if @picture.name.present? %>
+          <p>
+            <strong>Image:</strong>
+            <%= @picture.name %>
+          </p>
+        <% end %>
+        <% if @picture.description.present? %>
+        <p>
+          <strong>Description:</strong>
+          <%= @picture.description %>
+        </p>
+        <% end %>
+        <br>
+        <% if user_signed_in? %>
+        <%= link_to 'Edit (admin only)', edit_picture_path(@picture), class: "btn btn-sm btn-success"  %> |
+        <%= link_to 'Delete picture (admin only)', @picture, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger"  %> |
+        <% end %>
+        <%= link_to '< Back to gallery', gallery_path(@picture.gallery_id) if @picture.gallery_id.present? %>
+        
+        </div>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @picture.description %>
-</p>
+</div>
+</section>
 
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>

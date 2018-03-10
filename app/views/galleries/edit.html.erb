@@ -1,6 +1,18 @@
+<div class="container">
+    <div class="row-fluid">
+        <div class="col-xs-12">
+
 <h1>Editing Gallery</h1>
 
 <%= render 'form', gallery: @gallery %>
 
-<%= link_to 'Show', @gallery %> |
-<%= link_to 'Back', galleries_path %>
+<%= link_to 'View gallery', @gallery %> |
+<%= link_to 'Delete this gallery', @gallery, method: :delete, data: { confirm: 'Are you sure? This will delete any pictures in the gallery as well.' } %> |
+<%= link_to 'Go back to portfolio', root_path(anchor: 'porfolio') %>
+
+
+</div>
+</div>
+
+</div>
+

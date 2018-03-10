@@ -2,29 +2,39 @@
   <div class="container-fluid">
     <br>
     <h1>
-     Portfolio | <%= @gallery.name %>
+       
+     <%= link_to "Portfolio", root_path(:anchor => 'portfolio'), style: "" %> <small>| </small><%= @gallery.name %>
     </h1>
     <p>
       <%= @gallery.description if @gallery.description.present? %>
     </p>
-    <%= link_to 'Edit gallery title and/or description text (admin only)', edit_gallery_path(@gallery), class: "btn btn-sm btn-success" if user_signed_in? %>
+    <% if user_signed_in? %>
+        <%= link_to 'Edit gallery title and/or description text (admin only)', edit_gallery_path(@gallery), class: "btn btn-sm btn-success"  %>
+        <%= link_to "+ Add new picture into this gallery (admin only)", new_picture_path(:gallery_id => @gallery.id), class: "btn btn-sm btn-success" %>
+    <% end %>
     <%#= link_to 'Back', galleries_path %>
-   <hr>
+   <br>
    <!-- Images --> 
    <div class = "row">
      <% @pictures.each do |picture| %>
       <div class="col-xs-12 col-lg-4" style="padding: 1rem;">
-        <%= image_tag picture.image.url(:large), class:"img-fluid" %>
+          <%= link_to picture_path(picture) do %>
+            <%= image_tag picture.image.url(:large), class:"img-fluid" %>
+          <% end %>
          <p>
            <%= picture.try(:name) %>
             <% if user_signed_in? %>
+              <br>
+              <small><em>Display Order (admin only): </em><%= picture.try(:sort_order) %> </small>
               <br> 
-              <%= link_to "Edit (admin only)", "#", class: "btn btn-sm btn-success" %>
+              <%= link_to "Edit this picture and/or info (admin only)", edit_picture_path(picture), class: "btn btn-sm btn-success" %>
              <% end %>
            </p>
+           
       </div>
      <% end %>
     </div>
+    
   </div>
 </section>
 
