@@ -9,7 +9,7 @@
       <%= @gallery.description if @gallery.description.present? %>
     </p>
     <% if user_signed_in? %>
-        <%= link_to 'Edit gallery title and/or description text (admin only)', edit_gallery_path(@gallery), class: "btn btn-sm btn-success"  %>
+        <%= link_to 'Edit gallery information or cover image (admin only)', edit_gallery_path(@gallery), class: "btn btn-sm btn-success"  %>
         <%= link_to "+ Add new picture into this gallery (admin only)", new_picture_path(:gallery_id => @gallery.id), class: "btn btn-sm btn-success" %>
     <% end %>
     <%#= link_to 'Back', galleries_path %>

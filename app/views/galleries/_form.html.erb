@@ -1,5 +1,6 @@
 <%#= form_with(model: gallery, local: true) do |form| %>
 <%= form_for @gallery, url: galleries_path, html: { multipart: true } do |form| %>
+
   <% if gallery.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
@@ -13,7 +14,7 @@
   <% end %>
   
   <div class="form-group">
-    <%= form.label :image, "Gallery cover image" %>
+    <%= form.label :image, "Gallery cover image (*required)" %><br>
     <%= form.file_field :image %>
   </div>
    
@@ -34,4 +35,5 @@
   <div class="actions">
     <%= form.submit "Save", class:"btn btn-lg btn-success" %>
   </div>
+  
 <% end %>
