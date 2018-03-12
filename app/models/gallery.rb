@@ -10,6 +10,6 @@ class Gallery < ApplicationRecord
                     :styles => { :large => "1000x1000>", :thumb => ["150x150>", :png] }
     validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/JPG", "image/JPEG", "image/png", "image/PNG"]
     validates_attachment_file_name :image, :matches => [/png\Z/, /PNG\Z/, /jpe?g\Z/, /JPE?G\Z/  ]
-    validates_attachment :image, size: { less_than: 1.megabytes }
+    validates_attachment :image, size: { less_than: 5.megabytes }
 
 end
