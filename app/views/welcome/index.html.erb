@@ -106,7 +106,7 @@
     <div class="row">
       <!-- Dynamic galleries-->
       <% @galleries.each do |gallery| %>
-        <div class="col-xs-12 col-lg-6" style="height: 630px; padding: 65px 15px; ">
+        <div class="col-xs-12 col-lg-6" style="height: 500px; padding: 65px 15px; ">
           <%= link_to gallery_path(gallery) do %>
             <% if gallery.image.present? %>
               <%= image_tag gallery.image.url(:large), class:"img-fluid", style: "max-height: 430px;"%>
