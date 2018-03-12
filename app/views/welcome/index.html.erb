@@ -109,11 +109,11 @@
         <div class="col-xs-12 col-lg-6" style="padding-top: 20px; margin-top: 70px; ">
           <%= link_to gallery_path(gallery) do %>
             <% if gallery.image.present? %>
-              <%= image_tag gallery.image.url(:large), class:"img-fluid", style: "max-height: 430px;"%>
+              <%= image_tag gallery.image.url(:large), class:"img-fluid", style: "height: 430px;"%>
             <% else %>
-              <img src="https://via.placeholder.com/540x320" style=" height: 100%; max-width:100%">
+              <img src="https://via.placeholder.com/540x430" style=" height: 430px; max-width:100%">
             <% end %>
-           
+              <br>
               <%= gallery.name %>
               <% if user_signed_in? %>
                 <br>
