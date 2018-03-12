@@ -2,37 +2,49 @@
   <div class="container-fluid">
     <br>
     <h1>
-       
-     <%= link_to "Portfolio", root_path(:anchor => 'portfolio'), style: "" %> <small>| </small><%= @gallery.name %>
+      <span class= "text-muted float-sm-left" style=margin-left:20px;>
+        <%= link_to '<i class="fas fa-angle-double-left"></i>' .html_safe, root_path(:anchor => 'portfolio') %>
+      </span>
+      <!-- <span class= "text-muted float-sm-left" style="margin-left:20px;font-size:50%;">-->
+      <!--   <%#= link_to 'Portfolio', root_path(:anchor => 'portfolio'), class:"text-muted" %> -->
+      <!--  <i class="fas fa-caret-right text-muted"></i>-->
+      <!--  <%#= @gallery.name %>-->
+      <!--</span>-->
+      
+      
+      
+      <%= @gallery.name %>
+      <% if user_signed_in? %>
+        <small><small> 
+          <%= link_to '<i class="fa fa-pencil-alt"></i>' .html_safe, edit_gallery_path(@gallery), class: "btn btn-sm btn-secondary" %>
+          <%= link_to '<i class="fa fa-plus"></i> Add new picture' .html_safe,  new_picture_path(:gallery_id => @gallery.id), class: "btn btn-sm btn-success" %>
+           <small class="text-muted"> &nbsp;(Admin only) </small>
+        </small></small>
+      <% end %>
     </h1>
     <p>
       <%= @gallery.description if @gallery.description.present? %>
     </p>
-    <% if user_signed_in? %>
-        <%= link_to 'Edit gallery information or cover image (admin only)', edit_gallery_path(@gallery), class: "btn btn-sm btn-success"  %>
-        <%= link_to "+ Add new picture into this gallery (admin only)", new_picture_path(:gallery_id => @gallery.id), class: "btn btn-sm btn-success" %>
-    <% end %>
-    <%#= link_to 'Back', galleries_path %>
    <br>
-   <!-- Images --> 
-   <div class = "row">
-     <% @pictures.each do |picture| %>
-      <div class="col-xs-12 col-lg-4" style="padding: 1rem;">
+    <div class = "row">
+      <% @pictures.each do |picture| %>
+        <div class="col-xs-12 col-md-6 col-lg-4" style="padding: 1rem;">
           <%= link_to picture_path(picture) do %>
             <%= image_tag picture.image.url(:large), class:"img-fluid" %>
           <% end %>
-         <p>
-           <%= picture.try(:name) %>
-            <% if user_signed_in? %>
-              <br>
-              <small><em>Display Order (admin only): </em><%= picture.try(:sort_order) %> </small>
-              <br> 
-              <%= link_to "Edit this picture and/or info (admin only)", edit_picture_path(picture), class: "btn btn-sm btn-success" %>
-             <% end %>
-           </p>
-           
-      </div>
-     <% end %>
+            <p>
+             <%= picture.try(:name) %>
+              <% if user_signed_in? %>
+                <br><br>
+                <small class="text-muted"> (Admin only): </small>
+                <%= link_to '<i class="fa fa-pencil-alt"></i>' .html_safe, edit_picture_path(picture), class: "btn btn-sm btn-secondary" %>
+                <%= link_to '<i class="fa fa-times"></i>' .html_safe, picture, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
+                <br>
+                <small class="text-muted"><em>Display Order: </em><%= picture.sort_order || "none" %> </small>
+              <% end %>
+            </p>  
+        </div>
+      <% end %>
     </div>
     
   </div>
