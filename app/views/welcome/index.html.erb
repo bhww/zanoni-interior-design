@@ -110,7 +110,7 @@
           <%= link_to gallery_path(gallery) do %>
             <% if gallery.image.present? %>
             <!--dont forget alt tags-->
-              <%= image_tag gallery.image.url(:large), alt: gallery.try(:name), class: "img-fluid" %>
+              <%= image_tag gallery.image.url(:large), alt: gallery.try(:name), class: "img-fluid img-thumbnail" %>
               
               
               
