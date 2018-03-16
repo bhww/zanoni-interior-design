@@ -6,7 +6,12 @@
 
       <p id="notice"><%= notice %></p>
       
-      <h2><span class= "text-muted float-sm-left" style=margin-left:20px;><%= link_to '<i class="fas fa-angle-double-left"></i>' .html_safe, root_path(:anchor => 'portfolio') %></span></h2>
+      
+      
+      
+      
+      
+      <h2><span class= "text-muted float-sm-left" style=margin-left:20px;><%= link_to '<i class="fas fa-angle-double-left"></i>' .html_safe, gallery_path(@picture.gallery_id) %></span></h2>
       <br>  
         <p>
           <%= image_tag @picture.image.url(:large), class:"img-fluid img-thumbnail" %>

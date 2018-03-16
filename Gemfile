@@ -6,8 +6,6 @@ ruby '2.3.4'
 #   "https://github.com/#{repo_name}.git"
 # end
 
-
-
 gem 'rails', '~> 5.1.3'
 gem 'pg'
 gem 'puma', '~> 3.7'
@@ -24,6 +22,7 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'font-awesome-sass', '~> 5.0.6'
 gem "paperclip", "~> 5.2.1"
 gem 'aws-sdk', '~> 2.3'
+
 
 
 
