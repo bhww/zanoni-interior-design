@@ -106,7 +106,7 @@
     <div class="row">
       <!-- Dynamic galleries-->
       <% @galleries.each do |gallery| %>
-        <div class="col-xs-12 col-lg-6" style="padding-top: 20px; margin-top: 70px; ">
+        <div class="col-xs-12 col-lg-6" style="padding-top: 20px; margin-top: 40px; ">
           <%= link_to gallery_path(gallery) do %>
             <% if gallery.image.present? %>
             <!-- imag srcset later for smaller screen show medium ??? -->
@@ -120,7 +120,10 @@
                 <br>
                 <%= link_to '<i class="fa fa-pencil-alt"></i>' .html_safe, edit_gallery_path(gallery), class: "btn btn-sm btn-secondary" %>
                 <%= link_to '<i class="fa fa-times"></i>' .html_safe, gallery, method: :delete, data: { confirm: 'Are you sure? This will delete any pictures in the gallery as well.' }, class: "btn btn-sm btn-danger" %> 
-               <small class="text-muted"> (Admin only) </small>
+                <small class="text-muted">
+                   (Admin only) <br>
+                   <em>Display Order: </em><%= gallery.sort_order || "none" %> 
+                </small>
               <% end %>
            
           <% end %>
