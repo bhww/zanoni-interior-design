@@ -33,7 +33,7 @@
               <% if picture.image.exists?(:medium) %>
                  <%= image_tag picture.image.url(:medium), alt: picture.try(:name), class:"img-fluid img-thumbnail" %>
               <% else %>
-                 <%= image_tag picture.image.url(:medium), alt: picture.try(:name), class:"img-fluid img-thumbnail" %>
+                 <%= image_tag picture.image.url(:large), alt: picture.try(:name), class:"img-fluid img-thumbnail" %>
               <% end %>
              
             <% end %>
