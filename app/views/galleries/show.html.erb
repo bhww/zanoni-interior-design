@@ -29,7 +29,8 @@
         <% @pictures.each do |picture| %>
           <div class="col-xs-12 col-md-6 col-lg-4" style="padding: 1rem;">
             <%= link_to picture_path(picture) do %>
-              <%= image_tag picture.image.url(:medium), alt: picture.try(:name), class:"img-fluid img-thumbnail" %>
+              <%#= image_tag picture.image.url(:medium), alt: picture.try(:name), class:"img-fluid img-thumbnail" %>
+              <%= image_tag picture.image.url(:large), alt: picture.try(:name), class:"img-fluid img-thumbnail" %>
             <% end %>
               <p>
                <%= picture.try(:name) %>
