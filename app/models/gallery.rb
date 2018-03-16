@@ -7,7 +7,7 @@ class Gallery < ApplicationRecord
     # size: { in: 0..6000.kilobytes }
     
     has_attached_file :image, 
-                    :styles => { :large => "1000x1000>", :thumb => ["150x150>", :png] }
+                    :styles => { large: "1080x650#", medium: "540x325#" }
     validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/JPG", "image/JPEG", "image/png", "image/PNG"]
     validates_attachment_file_name :image, :matches => [/png\Z/, /PNG\Z/, /jpe?g\Z/, /JPE?G\Z/  ]
     validates_attachment :image, size: { less_than: 5.megabytes }
